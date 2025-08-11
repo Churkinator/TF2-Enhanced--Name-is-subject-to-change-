@@ -1,0 +1,67 @@
+"VertexLitGeneric"
+{
+	"$basetexture"		"models/workshop/player/items/sniper/fall17_riflemans_regalia/fall17_riflemans_regalia_blue_color"
+	"$bumpmap"		"models/workshop/player/items/sniper/fall17_riflemans_regalia/fall17_riflemans_regalia_normal"
+
+	"$detail"		"effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale"		"5"
+	"$detailblendfactor"		"0.01"
+	"$detailblendmode"		"6"
+
+	"$lightwarptexture"		"models/player/pyro/pyro_lightwarp"
+
+	"$phong"		"1"
+	"$phongexponent"		"5"
+	"$phongboost"		"0.35"
+	"$phongfresnelranges"		"[.3 1 8]"
+
+	"$rimlight"		"1"
+	"$rimlightexponent"		"4"
+	"$rimlightboost"		"2"
+
+	"$blendtintbybasealpha"		"1"
+	"$blendtintcoloroverbase"		"0"
+
+	"$colortint_base"		"{ 27 41 61 }"
+	"$colortint_tmp"		"[0 0 0]"
+
+	"$cloakPassEnabled"		"1"
+	"$yellow"		"0"
+
+	"proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"		"$detail"
+			"animatedtextureframenumvar"		"$detailframe"
+			"animatedtextureframerate"		"30"
+		}
+		"BurnLevel"
+		{
+			"resultVar"		"$detailblendfactor"
+		}
+		"ItemTintColor"
+		{
+			"resultVar"		"$colortint_tmp"
+		}
+		"SelectFirstIfNonZero"
+		{
+			"srcVar1"		"$colortint_tmp"
+			"srcVar2"		"$colortint_base"
+			"resultVar"		"$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar"		"$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1"		"$color2"
+			"srcVar2"		"$yellow"
+			"resultVar"		"$color2"
+		}
+	}
+}
