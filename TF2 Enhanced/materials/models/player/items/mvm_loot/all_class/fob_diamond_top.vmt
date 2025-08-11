@@ -1,0 +1,37 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/player/items/mvm_loot/all_class/fob_heavy_diamond_black"
+	"$basemapalphaphongmask" "1"
+
+	"$phong" "1"
+	"$phongexponent" "55"
+	"$phongboost" "4.7"
+	"$phongfresnelranges" "[.5 .7 1]"
+	"$halflambert" "1"	
+	"$lightwarptexture" "models/lightwarps/robot_lightwarp"
+	
+	"$rimlight" "1"
+	"$rimlightexponent" "25"
+	"$rimlightboost" "1"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

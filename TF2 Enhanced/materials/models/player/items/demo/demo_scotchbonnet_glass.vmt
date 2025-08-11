@@ -1,0 +1,60 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/player/items/demo/demo_scotchbonnet_glass"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale" "5"
+	"$detailblendfactor" ".01"
+	"$detailblendmode" "6"
+
+//	"$additive" "1"
+	"$translucent" "1"
+
+	">=DX90"
+	{
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.313660263 .313660263 .292792731]"
+	"$envmapsaturation" "1"	
+	}
+
+	"$phong" "1"
+	"$phongexponent" "100"
+	"$phongboost" "1.3"
+	"$phongfresnelranges" "[1 2 4]"
+	"$lightwarptexture" "models/lightwarps/jarate_lightwarp"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"		
+	"$rimlightboost" "2"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}		
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
