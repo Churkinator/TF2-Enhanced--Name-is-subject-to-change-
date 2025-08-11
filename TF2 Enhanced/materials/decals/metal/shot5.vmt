@@ -1,0 +1,6 @@
+"DecalModulate"
+{
+	"$basetexture" "Decals/metal/shot4"
+	"$decal" 1
+	"$decalscale" 0.16
+}
