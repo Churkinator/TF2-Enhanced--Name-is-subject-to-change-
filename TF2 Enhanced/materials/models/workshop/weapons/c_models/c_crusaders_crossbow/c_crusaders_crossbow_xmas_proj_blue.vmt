@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/workshop/weapons/c_models/c_crusaders_crossbow/c_crusaders_crossbow_xmas_proj_blue"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$phong" "1"
+	"$phongexponent" "55"
+	"$phongboost" "1.5"	
+	"$lightwarptexture" "models/lightwarps/xms_lightwarp"
+	"$phongfresnelranges"	"[1.5 3 6]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "1"
+}
