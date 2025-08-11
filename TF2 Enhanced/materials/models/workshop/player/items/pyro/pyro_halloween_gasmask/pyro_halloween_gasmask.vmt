@@ -1,0 +1,50 @@
+"VertexLitGeneric"
+{
+	"$basetexture"		"models/workshop/player/items/pyro/pyro_halloween_gasmask/pyro_halloween_gasmask_color"
+	"$bumpmap"		"models/workshop/player/items/pyro/pyro_halloween_gasmask/pyro_halloween_gasmask_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale" "5"
+	"$detailblendfactor" "0.01"
+	"$detailblendmode" "6"
+
+	"$phong" "1"
+	"$phongexponent" "8"
+	"$phongboost" "6.7"
+	"$phongfresnelranges" "[.3 1 8]"
+	"$lightwarptexture"		"models/player/pyro/pyro_lightwarp"
+	"$halflambert" "1"
+
+	"$rimlight"	"1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar"		"$detail"
+			"animatedtextureframenumvar"		"$detailframe"
+			"animatedtextureframerate"		"30"
+		}
+		"BurnLevel"
+		{
+			"resultVar"		"$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar"		"$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1"		"$yellow"
+			"resultVar"		"$color2"
+		}
+	}
+}

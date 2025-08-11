@@ -1,0 +1,45 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/workshop/player/items/soldier/robo_soldier_sparkplug/robo_soldier_sparkplug_color"
+	"$basemapalphaphongmask" "1"
+
+	"$lightwarptexture" "models/lightwarps/robot_lightwarp"
+
+	"$phong" "1"
+	"$phongexponent" "12"
+	"$phongboost" "8"
+	"$phongfresnelranges" "[.5 .7 1]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

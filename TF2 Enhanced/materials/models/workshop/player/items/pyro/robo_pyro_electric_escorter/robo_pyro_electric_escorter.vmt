@@ -1,0 +1,63 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/workshop/player/items/pyro/robo_pyro_electric_escorter/robo_pyro_electric_escorter_color"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale" "5"
+	"$detailblendfactor" "0.01"
+	"$detailblendmode" "6"
+
+	"$lightwarptexture"	"models/lightwarps/jarate_lightwarp"
+
+	">=DX90"
+	{
+		"$selfillum" "1"
+		//"$selfillumtint" "{239 213 109}"
+
+		"$envmap" "env_cubemap"
+		"$envmaptint" "[.970975015 .921451465 .679549431]"
+		"$envmapsaturation" "1"
+	}
+
+	"$additive"	"1"
+
+	"$phong"		"1"
+	"$phongexponent"		"125"
+	"$phongboost"		"2"
+	"$phongfresnelranges"		"[1 2 4]"
+	"$halflambert" "1"
+
+	"$rimlight"		"1"
+	"$rimlightexponent"		"4"
+	"$rimlightboost"		"2"
+
+	"$cloakPassEnabled"		"1"
+	"$yellow"		"0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
