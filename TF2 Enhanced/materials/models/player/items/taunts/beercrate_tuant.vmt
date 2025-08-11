@@ -1,0 +1,13 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\player\items\taunts\beercrate_taunt"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$phong" "1"
+	"$halflambert" "1"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"	
+	"$rimlightboost" "2"
+}

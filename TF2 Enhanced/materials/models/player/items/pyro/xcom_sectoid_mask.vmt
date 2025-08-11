@@ -1,0 +1,50 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/player/items/pyro/xcom_sectoid_mask"
+	"$bumpmap" "models/player/items/pyro/xcom_sectoid_mask_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+	"$phong" "1"
+	"$phongexponent" "30"
+	"$phongboost" ".5"
+	"$phongfresnelranges" "[.65 1.3 2.6]"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

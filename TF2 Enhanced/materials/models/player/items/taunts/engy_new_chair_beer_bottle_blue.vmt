@@ -1,0 +1,24 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\items\taunts\engy_new_chair_beer_bottle_blue"
+	"$basemapalphaphongmask" "1"
+
+	">=DX90"
+	{
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.2 .2 .2]"
+	"$envmapsaturation" "1"
+	"$basealphaenvmapmask" "1"	
+	}
+
+	"$phong" "1"
+	"$phongexponent" "150"
+	"$phongboost" ".5"	
+	"$phongfresnelranges"	"[.7 1.5 2]"
+	"$halflambert" "1"
+	"$lightwarptexture" "models\player\pyro\pyro_lightwarp"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+}

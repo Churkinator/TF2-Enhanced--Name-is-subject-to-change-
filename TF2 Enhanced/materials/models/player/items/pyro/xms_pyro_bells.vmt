@@ -1,0 +1,77 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/player/items/pyro/xms_pyro_bells"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+	">=DX90"
+	{
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[0.985 0.937 0.207]"
+//	"$envmapcontrast" "1"
+	"$envmapsaturation" "1"
+	"$normalmapalphaenvmapmask" "1"	
+	}
+
+	"$phong" "1"
+	"$phongexponent" "55"
+	"$phongboost" "2"	
+	"$lightwarptexture" "models/lightwarps/xms_lightwarp"
+	"$phongfresnelranges"	"[.3 1 8]"
+	"$halflambert" "1"
+
+ 	"$blendtintbybasealpha" "1" 
+	"$blendtintcoloroverbase" "1"  
+
+	"$colortint_base" "{247 221 8}"
+	"$colortint_tmp" "[0 0 0]" 
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"	
+	"$rimlightboost" "2"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"ItemTintColor"
+		{
+			"resultVar" "$colortint_tmp"
+		}
+		"SelectFirstIfNonZero"
+		{
+			"srcVar1"	"$colortint_tmp"
+			"srcVar2"	"$colortint_base"
+			"resultVar" "$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

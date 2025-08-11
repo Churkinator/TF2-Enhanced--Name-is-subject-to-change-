@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\player\items\taunts\limes"
+	"$basemapalphaphongmask" "1"
+
+	"$phong" "1"
+	"$phongexponent" "40"
+	"$phongboost" "2"	
+	"$phongfresnelranges"	"[.7 1.5 2]"
+	"$halflambert" "1"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	
+	"$rimlight" "1"
+	"$rimlightexponent" "4"	
+	"$rimlightboost" "2"
+}

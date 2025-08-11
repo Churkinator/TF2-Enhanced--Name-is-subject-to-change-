@@ -1,0 +1,57 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/player/items/pyro/mtp_backpack"
+	"$bumpmap"	"models/player/items/pyro/mtp_backpack_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" ".01"
+	"$detailblendmode" "6"
+
+	">=DX90"
+	{
+	"$envmap" "cubemaps/cubemap_gold001"
+	"$envmaptint" "[.718 .702 .436]"
+	"$envmapsaturation" "1"
+	}
+
+	"$phong" "1"
+	"$phongexponent" "145"
+	"$phongboost" "10"	
+	"$lightwarptexture" "models/lightwarps/rainblower_lightwarp"
+	"$phongfresnelranges" "[.3 1 8]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

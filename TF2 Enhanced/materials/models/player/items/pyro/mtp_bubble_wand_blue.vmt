@@ -1,0 +1,65 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/player/items/pyro/mtp_bubble_wand"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	//phong properties
+	"$phong" "1"
+	"$phongboost" "1.4"
+	"$phongexponent" "100"
+	"$phongfresnelranges" "[0.25 .5 1]"
+	"$lightwarptexture" "models/lightwarps/rainblower_lightwarp"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"	
+	"$rimlightboost" "2"
+
+ 	"$blendtintbybasealpha" "0"
+	"$blendtintcoloroverbase" "1"
+
+	"$colortint_base" "{157 15 38}"
+	"$colortint_tmp" "[0 0 0]"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$glowcolor" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"ModelGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+		"SelectFirstIfNonZero"
+		{
+			"srcVar1"	"$colortint_tmp"
+			"srcVar2"	"$colortint_base"
+			"resultVar" "$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

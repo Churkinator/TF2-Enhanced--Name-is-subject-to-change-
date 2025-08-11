@@ -1,0 +1,16 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\player\items\taunts\engy_chair_umbrella_red"
+	"$basemapalphaphongmask" "1"
+	
+	"$phong" "1"
+	"$phongexponent" "150"
+	"$phongboost" ".5"	
+	"$phongfresnelranges"	"[.7 1.5 2]"
+	"$halflambert" "1"
+	"$lightwarptexture" "models\player\pyro\pyro_lightwarp"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+}
