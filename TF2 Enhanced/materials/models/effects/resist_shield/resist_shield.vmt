@@ -1,0 +1,61 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\effects\resist_shield\resist_shield.vtf"
+//	"$translucent" "1"
+	"$additive" "1"
+
+	<dx90
+	{
+		"$bumpmap" "water/dx80_tfwater001_normal"
+	}
+	"$bumpmap" "water/tfwater001_normal"
+	"$envmap" "effects/invun_red"
+
+	"$phong" "1"
+	"$phongexponent" "4"
+	"$phongboost" "0.5"	
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$phongfresnelranges"	"[.3 .6 1.2]"
+	"$halflambert" "1"
+
+	// Rim lighting parameters
+	"$rimlight" "1"
+	"$rimlightexponent" "11"
+	"$rimlightboost" "7"
+
+	"$selfillumfresnel" "1"
+	"$selfillumfresnelminmaxexp" "[0 1 1]"
+	"$selfillum" "1"
+	
+	"$selfillumtint" "[-0.3 -0.3 -0.3]"
+	"$selfillumtint_base" "[0.3 0.3 0.3]"
+	"$shield_falloff" 0.0
+
+	"$cloakPassEnabled" "1"
+
+	"Proxies"
+	{
+		"spy_invis"
+		{
+		}
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$bumpmap"
+			"animatedtextureframenumvar" "$bumpframe"
+			"animatedtextureframerate" 70
+		}
+		"ShieldFalloff"
+		{
+			"resultVar"	"$shield_falloff"
+		}
+		"Multiply"
+		{
+			"srcVar1"	"$shield_falloff"
+			"srcVar2"	"$selfillumtint_base"
+			"resultVar"	"$selfillumtint"
+		}
+	}
+}
