@@ -1,0 +1,56 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/shared/gold_player"
+	"$basemapalphaphongmask" "1"
+
+	"$envmap" "cubemaps/cubemap_gold001"
+//	"$envmaptint" "[1.5 1.2 .2]"
+	"$envmaptint" "[1.538 1.44 .321]"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+	"$phong" "1"
+	"$phongexponent" "150"
+	"$phongboost" "10"
+	"$phongfresnelranges" "[.25 1 4]"
+	"$halflambert" "1"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+
+	// Rim lighting parameters
+	"$rimlight" "1"												// To enable rim lighting (requires phong)
+	"$rimlightexponent" "4"										// Exponent for phong component of rim lighting	
+	"$rimlightboost" "2"										// Boost for ambient cube component of rim lighting
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
