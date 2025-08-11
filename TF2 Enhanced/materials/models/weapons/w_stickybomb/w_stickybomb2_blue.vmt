@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models\weapons\w_stickybomb/w_stickybomb2_blue"
+	"$basemapalphaphongmask" "1"
+	
+	"$nodecal" "1"
+
+	"$selfillum" "1"
+	"$selfillummask" "models\weapons\w_stickybomb/w_stickybomb2_selfillum"
+
+	"$phong" "1"
+	"$phongexponent" "5"
+	"$phongboost" ".25"	
+	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
+	"$phongfresnelranges" "[0.25 0.5 1]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "20"
+	"$rimlightboost" ".25"
+}

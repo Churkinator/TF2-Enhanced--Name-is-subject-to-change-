@@ -1,0 +1,45 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models\weapons\w_stickybomb/w_stickybomb_d_red"
+	
+	"$selfillum" "1"
+	"$selfillummask" "models\weapons\w_stickybomb/w_stickybomb_d_selfillum"
+	
+	"$nodecal" "1"
+
+	"$phong" "1"
+	"$phongexponent" "5"
+	"$phongboost" ".25"	
+	"$lightwarptexture" "models\lightwarps\weapon_lightwarp"
+	"$phongfresnelranges" "[0.25 0.5 1]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "20"
+	"$rimlightboost" ".25"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$glowcolor" "1"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"StickybombGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$selfillumtint"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+	}
+}
