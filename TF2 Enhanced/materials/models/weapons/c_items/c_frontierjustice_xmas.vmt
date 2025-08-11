@@ -1,0 +1,69 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/weapons/c_items/c_frontierjustice_xmas"
+	"$basemapalphaphongmask" "1"
+
+	"$envmap" "cubemaps/cubemap_gold001"
+//	"$envmaptint" "[.5 .5 .5]"
+	"$envmaptint" "[.8913 .8317 .541]"
+	"$basealphaenvmapmask" "1"
+	"$envmapsaturation" "1"
+//	"$normalmapalphaenvmapmask" 1
+
+	"$phong" "1"
+	"$phongexponent" "125"
+	"$phongboost" "8"
+	"$lightwarptexture" "models/lightwarps/xms_lightwarp"	
+	"$phongfresnelranges" "[.25 .5 1]"
+	"$halflambert" "1"
+
+	// Rim lighting parameters
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "1"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$sheenPassEnabled" "1"
+	"$yellow" "0"
+	"$glowcolor" "1"
+
+	"$sheenmap" 		"cubemaps\cubemap_sheen001"
+	"$sheenmapmask" 		"Effects\AnimatedSheen\animatedsheen0"
+	"$sheenmaptint" 		"[ 1 1 1 ]"
+	"$sheenmapmaskframe" 	"0"
+	"$sheenindex" 		"0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedWeaponSheen"
+		{
+			"animatedtexturevar" 		"$sheenmapmask"
+			"animatedtextureframenumvar" 	"$sheenmapmaskframe"
+			"animatedtextureframerate" 		"40"
+		}
+		"ModelGlowColor"
+		{
+			"resultVar" "$glowcolor"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$glowcolor"
+			"resultVar" "$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
+
