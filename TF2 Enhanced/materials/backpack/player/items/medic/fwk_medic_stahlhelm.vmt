@@ -1,0 +1,7 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "backpack/player/items/medic/fwk_medic_stahlhelm"
+	"$alphatest" "1"
+	"$allowalphatocoverage" "1"
+	$vertexcolor 1
+}

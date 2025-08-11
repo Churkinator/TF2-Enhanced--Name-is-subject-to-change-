@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$baseTexture" "Tile/tile_ceiling_worn"
+	"$surfaceprop" "ceiling_tile"	
+	"%keywords" "tf"
+}
