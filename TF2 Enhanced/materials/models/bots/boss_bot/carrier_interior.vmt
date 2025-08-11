@@ -1,0 +1,9 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models\bots\boss_bot\carrier_interior"
+
+	"$selfillum" 1
+
+	"$lightwarptexture" "models/lightwarps/robot_lightwarp"
+	"$halflambert" "1"
+}
