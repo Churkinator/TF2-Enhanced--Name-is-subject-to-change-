@@ -1,0 +1,31 @@
+"VertexlitGeneric"
+{
+	<dx90
+	{
+		 	"$fallbackmaterial" "models\props_halloween\pumpkin_explode_dx80"
+	}
+	"$baseTexture" "models\props_halloween\pumpkin_explode"
+	"$basemapalphaphongmask" "1"
+
+	"$detail" "models\props_halloween/pumpkin_detail"
+	"$detailscale" "1"
+	"$detailblendfactor" 1
+	"$detailblendmode" 5
+
+	"$phong" "1"
+	"$phongexponent" "30"
+	"$phongboost" ".25"	
+	"$lightwarptexture" "models/lightwarps/mirv_lightwarp"
+	"$phongfresnelranges"	"[2 2.5 5]"
+
+	"Proxies"
+	{
+		"Sine"
+		{
+		"sinemax" "1"
+		"sinemin" ".25"
+		"sineperiod" ".5"
+		"resultvar" "$detailblendfactor"
+		}
+	}
+}

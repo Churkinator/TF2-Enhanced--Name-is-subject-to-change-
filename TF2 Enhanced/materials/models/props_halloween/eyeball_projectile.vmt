@@ -1,0 +1,18 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/props_halloween/eyeball_projectile"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$phong" "1"
+	"$phongexponent" "3"
+	"$phongboost" ".25"	
+	"$lightwarptexture" "models/lightwarps/weapon_lightwarp"
+	"$phongfresnelranges"	"[2 4 6]"
+	"$halflambert" "1"
+
+	// Rim lighting parameters
+	"$rimlight" "1"												// To enable rim lighting (requires phong)
+	"$rimlightexponent" "4"										// Exponent for phong component of rim lighting	
+	"$rimlightboost" "2"	
+
+}

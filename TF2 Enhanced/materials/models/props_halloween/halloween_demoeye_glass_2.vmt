@@ -1,0 +1,58 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models\props_halloween/haunted_eyeball_glass"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+//	"$translucent" "1"
+	"$additive" "1"
+
+	"$nodecal" "1"
+
+	"$envmap" "models/player/shared/eye-reflection-cubemap-"
+
+	"$phong" "1"
+	"$phongexponent" "2"
+	"$phongboost" ".2"	
+	"$lightwarptexture" "models/props_halloween/halloween_lens_lightwarp"
+//	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$phongfresnelranges"	"[1 2 4]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "20"
+	"$rimlightboost" ".25"
+
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"spy_invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1"  "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
