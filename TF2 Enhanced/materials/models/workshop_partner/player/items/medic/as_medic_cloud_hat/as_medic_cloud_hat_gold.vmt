@@ -1,0 +1,56 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/workshop_partner/player/items/medic/as_medic_cloud_hat/as_medic_cloud_hat"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+	">=DX90"
+	{
+		"$envmap" "cubemaps/cubemap_gold001"
+		"$envmaptint" "[4.65 3.45 3.25]"
+	}
+
+	"$phong" "1"
+	"$phongexponent" "150"
+	"$phongboost" "10"
+	"$phongfresnelranges"	"[.25 1 4]"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" ".5"
+
+	"$yellow" "0"
+	"$cloakPassEnabled" "1"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}		
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
