@@ -1,0 +1,56 @@
+"VertexLitGeneric"
+{
+	"$basetexture" "models/weapons/c_models/c_sniperrifle/c_sniperrifle_scope"
+	"$basemapalphaphongmask" "1"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512"
+	"$detailscale" "5"
+	"$detailblendfactor" 0.1
+	"$detailblendmode" 6
+
+	"$basealphaenvmapmask" "1"
+	"$envmap" "effects/pyrocube.hdr"
+	"$envmaptint" "[.125 .125 .125]"
+	"$envmapsaturation" "1"
+
+	"$phong" "1"
+	"$phongexponent" "65"
+	"$phongboost" "3"	
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$phongfresnelranges"	"[1.5 3 6]"
+	"$halflambert" "1"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

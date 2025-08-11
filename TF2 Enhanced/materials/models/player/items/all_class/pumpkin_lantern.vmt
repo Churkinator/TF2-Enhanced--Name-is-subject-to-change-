@@ -1,0 +1,81 @@
+"VertexLitGeneric"
+{
+ 	"$basetexture" "models/player/items/all_class/pumpkin_lantern"
+	"$basemapalphaphongmask" "1"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" .01
+	"$detailblendmode" 6
+
+	">=DX90"
+       	{
+			"$selfillum" "1"
+			"$selfillummask" "models/player/items/all_class/pumpkin_lantern_selfillum"
+			//"$selfillumtint" "[1.5 1.5 1.5]"		  
+       	}
+
+	"$phong" "1"
+ 	"$phongexponent" "3"
+	"$phongboost" ".6"
+	"$phongfresnelranges" "[.25 .5 1]"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"
+	"$halflambert" "1"
+
+	"$rimlight" "1"						
+	"$rimlightexponent" "4"				
+	"$rimlightboost" "2"
+
+	"$blendtintbybasealpha" "0"     // Enabling this creates trouble in combination with $selfillum!!!
+ 	"$blendtintcoloroverbase" "0"
+	
+	"$colortint_base" "{254 168 67}"
+	"$colortint_tmp" "[0 0 0]"
+
+	"$cloakPassEnabled" "1"
+ 	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+   		"Sine"
+		{
+			"resultVar" "$selfillumtint"
+			"sineperiod" "3"
+			"sinemin" "1"
+			"sinemax" "1.5"
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"ItemTintColor"
+		{
+			"resultVar" "$colortint_tmp"
+		}
+		"SelectFirstIfNonZero"
+		{
+			"srcVar1"	"$colortint_tmp"
+			"srcVar2"	"$colortint_base"
+			"resultVar" "$color2"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

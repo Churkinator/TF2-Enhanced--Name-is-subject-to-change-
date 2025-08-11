@@ -1,0 +1,44 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/player/items/soldier/soldier_skihat_glasses"
+	"$bumpmap" "models/player/shared/shared_normal"
+
+	">=DX90"
+	{
+	"$envmap" "env_cubemap"
+	"$normalmaplphaenvmapmask" "1"
+	"$envmaptint" "[.938949379 .857873547 .559241211]"
+	"$envmapsaturation" "1"
+	}
+
+	"$phong" "1"
+	"$phongexponent" "165"
+	"$phongboost" ".85"
+	"$phongfresnelranges" "[1 2 4]"
+	"$lightwarptexture" "models/lightwarps/jarate_lightwarp"
+
+	"$rimlight" "1"						
+	"$rimlightexponent" "20"				
+	"$rimlightboost" "2"
+	
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"$yellow" "0"
+
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Multiply"
+		{
+			"srcVar1" "$color2"
+			"srcVar2" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}

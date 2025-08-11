@@ -1,0 +1,56 @@
+"VertexlitGeneric"
+{
+	"$baseTexture" "models/player/items/all_class/id_badge_bronze"
+	"$bumpmap" "models/effects/flat_normal"
+
+	"$detail" "effects/tiledfire/fireLayeredSlowTiled512.vtf"	
+	"$detailscale" "5"
+	"$detailblendfactor" .1
+	"$detailblendmode" 6
+	"$yellow" "0"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.57 .5 .4055]"
+	"$envmapsaturation" "1"
+
+	"$phong" "1"
+	"$phongexponent" "8"
+	"$phongboost" ".1"
+	"$lightwarptexture" "models/player/pyro/pyro_lightwarp"	
+	"$phongfresnelranges"	"[.25 1 4]"
+	"$basemapalphaphongmask" "1"
+
+
+	// Rim lighting parameters
+	"$rimlight" "1"
+	"$rimlightexponent" "4"
+	"$rimlightboost" "2"
+
+	// Cloaking
+	"$cloakPassEnabled" "1"
+	"Proxies"
+	{
+		"invis"
+		{
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$detail"
+			"animatedtextureframenumvar" "$detailframe"
+			"animatedtextureframerate" 30
+		}
+		"BurnLevel"
+		{
+			"resultVar" "$detailblendfactor"
+		}
+		"YellowLevel"
+		{
+			"resultVar" "$yellow"
+		}
+		"Equals"
+		{
+			"srcVar1" "$yellow"
+			"resultVar" "$color2"
+		}
+	}
+}
